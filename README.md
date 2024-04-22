@@ -120,7 +120,7 @@ The app sets up a web server for a supplier management system. It allows viewing
 ## Prerequisites
 
 - A work station or an **EC2 instance**.
-- **AWS EKS** cluster [installed]()
+- **AWS EKS** cluster [installed](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
 - **HELM** [installed](https://helm.sh/docs/intro/install/)
 - **Kubectl** [installed](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 - **AWS CLI** [installed](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#getting-started-install-instructions)
@@ -138,6 +138,31 @@ The app sets up a web server for a supplier management system. It allows viewing
 
 ## Steps
 
-### Setting up Istio and deploying the observability tools
+### Deploying the **BITNAMI LMS POWERED BY MOODLE™ LMS** **HELM** CHART
 
-1. Enable Istio in the working namespace. Mine is default.
+1. Deploy the chart:
+
+```
+helm install my-release oci://registry-1.docker.io/bitnamicharts/moodle
+```
+
+Read more about the installation in the [Bitnami LMS powered by Moodle™ LMS Chart Github repository](https://github.com/bitnami/charts/blob/main/bitnami/moodle/README.md)
+
+### Install the AWS EBS CSI driver:
+
+1. Add the EKS chart repository
+
+```
+helm repo add aws-ebs-csi-driver https://kubernetes-sigs.github.io/aws-ebs-csi-driver/
+```
+
+2. Update your local Helm chart repository cache
+
+```
+helm repo update
+```
+
+3. Install the AWS EBS CSI driver
+```
+helm install aws-ebs-csi-driver aws-ebs-csi-driver/aws-ebs-csi-driver --namespace kube-system --set enableVolumeScheduling=true --set enableVolumeResizing=true --set enableVolumeSnapshot=true
+```
