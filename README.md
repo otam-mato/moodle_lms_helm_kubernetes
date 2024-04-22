@@ -60,6 +60,8 @@ Moodle courses, users, roles, groups, competencies, learning plans, grades, and 
   <img width="300" alt="Screenshot 2024-01-17 at 16 44 07" src="https://hackmd.io/_uploads/rkGtIlVZR.png">
 </p>
 
+<br>
+
 [**Detailed app description**](https://subscription.packtpub.com/book/web-development/9781801816724/2/ch02lvl1sec08/understanding-the-moodle-architecture)
 
 <br>
@@ -90,7 +92,7 @@ Moodle courses, users, roles, groups, competencies, learning plans, grades, and 
   aws eks --region eu-west-2 update-kubeconfig --name my-clister
   ```
   
-  <img width="800" alt="Screenshot 2024-01-14 at 21 09 50" src="https://github.com/otam-mato/istio/assets/113034133/b79cb294-f06e-40db-b517-ef66a106d43e">
+  <img width="800" alt="Screenshot 2024-01-14 at 21 09 50" src="">
 
 
 <br>
@@ -130,6 +132,8 @@ Moodle courses, users, roles, groups, competencies, learning plans, grades, and 
 ```
 
 ### 2. Install the AWS EBS CSI driver:
+                     
+You will need to deploy the **AWS EBS CSI** driver to your Kubernetes cluster. This driver allows Kubernetes to provision, attach, and mount **EBS volumes** as **persistent volumes**.                     
 
 1. Add the EKS chart repository
 
