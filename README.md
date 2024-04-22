@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img height="50" width="50" src="https://cdn.simpleicons.org/Istio/#4863A0" /><img height="50" width="50" src="https://cdn.simpleicons.org/helm/blue" /><img src="https://skillicons.dev/icons?i=kubernetes,aws,docker"/><img height="50" width="50" src="https://github.com/otam-mato/moodle_lms_helm_kubernetes/assets/113034133/31333121-d019-4a9c-9c47-1d6f0b2af94d"/><img height="50" width="50" src="https://hackmd.io/_uploads/rkF2jkVbA.png"/>
+    <img height="50" width="50" src="https://cdn.simpleicons.org/Istio/#4863A0" /><img height="50" width="50" src="https://cdn.simpleicons.org/helm/blue" /><img src="https://skillicons.dev/icons?i=kubernetes,aws,docker"/><img height="50" width="50" src="https://hackmd.io/_uploads/rkF2jkVbA.png"/><img height="50" width="50" src="https://github.com/otam-mato/moodle_lms_helm_kubernetes/assets/113034133/31333121-d019-4a9c-9c47-1d6f0b2af94d"/>
   </a>
 </p>
 
