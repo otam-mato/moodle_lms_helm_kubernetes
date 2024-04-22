@@ -1,6 +1,6 @@
 
 
-# Moodle LMS app deployment to AWS EKS<br><br>
+# MOODLE™ LMS app deployment on AWS EKS with HELM<br><br>
 
 <br>
 
