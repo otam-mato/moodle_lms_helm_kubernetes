@@ -14,6 +14,8 @@
 
 > [!NOTE]
 > The deployment of the **MOODLE™ LMS** application<br>
+>
+> Moodle is a free and open-source learning management system written in PHP and distributed under the GNU General Public License. Moodle is used for blended learning, distance education, flipped classroom and other online learning projects
 > 
 > Moodle has been developed on the open-source LAMP framework, which consists of **Linux** (operating system), **Apache** (web server), **MySQL** (database), and **PHP** (programming language). While Moodle runs on other technology stacks, we will focus on **LAMP** since it has proven the most popular setup among Moodle administrators. [this link](). 
 >
