@@ -138,17 +138,39 @@ The app sets up a web server for a supplier management system. It allows viewing
 
 ## Steps
 
-### Deploying the **BITNAMI LMS POWERED BY MOODLE™ LMS** **HELM** CHART
+### 1. Update the IAM role associated with your EKS worker nodes to include permissions for managing EBS volumes: 
 
-1. Deploy the chart:
+1. Find the IAM role. It should look something like: 
+**eksctl-<cluster_name>-nodegroup-ng-NodeInstanceRole-<some_random_number>**
+
+1. Make sure the IAM policy granting EBS volume management permissions **(ec2:CreateVolume)** is attached to the **eksctl-<cluster_name>-nodegroup-ng-NodeInstanceRole-<some_random_number>**.
+
+2. Or, you can create the new policy and attach it to the **eksctl-<cluster_name>-nodegroup-ng-NodeInstanceRole-<somerandom_number>**
 
 ```
-helm install my-release oci://registry-1.docker.io/bitnamicharts/moodle
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AttachVolume",
+        "ec2:CreateVolume",
+        "ec2:DeleteVolume",
+        "ec2:DetachVolume",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeVolumeStatus",
+        "ec2:DescribeVolumeAttribute",
+        "ec2:DescribeVolumeAttachments"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+
 ```
 
-Read more about the installation in the [Bitnami LMS powered by Moodle™ LMS Chart Github repository](https://github.com/bitnami/charts/blob/main/bitnami/moodle/README.md)
-
-### Install the AWS EBS CSI driver:
+### 2. Install the AWS EBS CSI driver:
 
 1. Add the EKS chart repository
 
@@ -166,3 +188,13 @@ helm repo update
 ```
 helm install aws-ebs-csi-driver aws-ebs-csi-driver/aws-ebs-csi-driver --namespace kube-system --set enableVolumeScheduling=true --set enableVolumeResizing=true --set enableVolumeSnapshot=true
 ```
+                     
+### 3. Deploy the **BITNAMI LMS POWERED BY MOODLE™ LMS** **HELM** CHART
+
+1. Deploy the chart:
+
+```
+helm install my-release oci://registry-1.docker.io/bitnamicharts/moodle
+```
+
+Read more about the installation in the [Bitnami LMS powered by Moodle™ LMS Chart Github repository](https://github.com/bitnami/charts/blob/main/bitnami/moodle/README.md)                     
