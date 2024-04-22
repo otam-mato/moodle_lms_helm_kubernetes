@@ -62,7 +62,10 @@ Moodle courses, users, roles, groups, competencies, learning plans, grades, and 
 
 <br>
 
-[**Detailed app description**](https://subscription.packtpub.com/book/web-development/9781801816724/2/ch02lvl1sec08/understanding-the-moodle-architecture)
+[**App architecture description**](https://subscription.packtpub.com/book/web-development/9781801816724/2/ch02lvl1sec08/understanding-the-moodle-architecture)
+
+[**Detailed app description**](https://moodle.com/solutions/lms/features/)
+
 
 <br>
 
