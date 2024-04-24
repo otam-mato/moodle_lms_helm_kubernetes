@@ -168,3 +168,47 @@ helm install my-release oci://registry-1.docker.io/bitnamicharts/moodle
 ```
 
 Read more about the installation in the [Bitnami LMS powered by Moodle™ LMS Chart Github repository](https://github.com/bitnami/charts/blob/main/bitnami/moodle/README.md)                     
+
+### 4. To modify the chart before installation:
+
+To modify a Helm chart before installing it, you generally follow these steps:
+
+1. Obtain the Helm Chart
+First, you need to download the Helm chart so you can modify its configurations. You can fetch the chart from its repository:
+
+```bash
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm fetch bitnami/moodle --untar
+```
+
+This command will download and extract the Moodle chart to a directory named `moodle` in your current working directory.
+
+2. Modify the Chart Values
+Navigate into the chart directory:
+
+```bash
+cd moodle
+```
+
+3. Install the Modified Chart
+After you’ve made your changes to the `values.yaml` file, you can install the Helm chart using your local modifications:
+
+```bash
+helm install my-release ./ --namespace default
+```
+
+Make sure you’re running this command from the directory containing the modified chart.
+
+4. Verify Installation
+After installing, you should verify that the pods are running correctly:
+
+```bash
+kubectl get pods -n default
+```
+
+5. Update or Upgrade
+If you need to update or adjust the settings after the chart has already been deployed, you can modify the `values.yaml` again and then use `helm upgrade` to apply the changes:
+
+```bash
+helm upgrade my-release ./ --namespace default
+```
