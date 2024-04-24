@@ -85,6 +85,10 @@ Moodle courses, users, roles, groups, competencies, learning plans, grades, and 
 
 - A work station or an **EC2 instance**.
 - **AWS EKS** cluster [installed](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
+  
+  ```
+  eksctl create cluster --name moodle-lms-tester --region eu-west-2 --nodegroup-name lms-nodes --node-type t3.micro --managed --nodes 2 
+  ```
 - **HELM** [installed](https://helm.sh/docs/intro/install/)
 - **Kubectl** [installed](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 - **AWS CLI** [installed](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#getting-started-install-instructions)
