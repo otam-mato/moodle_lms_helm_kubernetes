@@ -218,7 +218,10 @@ helm upgrade my-release ./ --namespace default
 Changing the reclaim policy of a PersistentVolume
 List the PersistentVolumes in your cluster:
 
+```
 kubectl get pv
+```
+
 The output is similar to this:
 
 ```
