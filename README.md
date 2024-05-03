@@ -241,7 +241,7 @@ kubectl patch pv <your-pv-name> -p '{"spec":{"persistentVolumeReclaimPolicy":"Re
 
 ### 6. Add TLS encryption:
 
-1. Create certificate via CertificateManager and note its ARN
+1. Create a certificate via CertificateManager and note its ARN
 2. Modify the service (LoadBalancer)
    ```
    kubectl edit svc my-release-moodle
