@@ -244,6 +244,9 @@ kubectl patch pv <your-pv-name> -p '{"spec":{"persistentVolumeReclaimPolicy":"Re
 1. Create a certificate via CertificateManager and note its ARN
 2. Modify the service (LoadBalancer)
    ```
+   kubectl get svc
+   ```
+   ```
    kubectl edit svc my-release-moodle
    ```
 4. Update the service's annotations:
