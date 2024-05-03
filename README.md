@@ -238,3 +238,33 @@ Choose one of your PersistentVolumes and change its reclaim policy:
 ```
 kubectl patch pv <your-pv-name> -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 ```
+
+### 6. Add TLS encryption:
+
+1. Create certificate via CertificateManager and note its ARN
+2. Modify the service (LoadBalancer)
+   ```
+   kubectl edit svc my-release-moodle
+   ```
+4. Update the service's annotations:
+   ```
+   annotations:
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:region:account-id:certificate/certificate-id
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"   
+   ```
+5. Update the service's target ports:
+    ```
+    spec:
+      ports:
+      - name: http
+        nodePort: 31189
+        port: 80
+        protocol: TCP
+        targetPort: http  # This is typically 8080 if Moodle runs on this port inside the container
+      - name: https
+        nodePort: 31114
+        port: 443
+        protocol: TCP
+        targetPort: http  # Change from 'https' to 'http' (or '8080' if explicitly set in your Moodle deployment)
+     ```
