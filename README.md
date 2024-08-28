@@ -84,6 +84,7 @@ Moodle courses, users, roles, groups, competencies, learning plans, grades, and 
 ## Prerequisites
 
 - A work station or an **EC2 instance**.
+- **eksctl [installed] (https://eksctl.io/installation/)**
 - **AWS EKS** cluster [installed](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
   
   ```
