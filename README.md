@@ -272,3 +272,9 @@ kubectl patch pv <your-pv-name> -p '{"spec":{"persistentVolumeReclaimPolicy":"Re
         protocol: TCP
         targetPort: http  # Change from 'https' to 'http' (or '8080' if explicitly set in your Moodle deployment)
      ```
+### 7. Enable Logging (Optional):
+
+1. To enable CloudWatch logging for better observability, you can use the following command:
+   ```
+   eksctl utils update-cluster-logging --enable-types=all --region=eu-west-2 --cluster=moodle-lms-tester
+   ```
